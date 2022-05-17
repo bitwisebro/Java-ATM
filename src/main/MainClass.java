@@ -3,14 +3,16 @@ package main;
 import java.util.*;
 
 public class MainClass extends ATM_methods {
-	
+
 //	private static final Scanner scn = null;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		int balance = 50000, withdraw, deposit, num;
+		int sleep = 1500;
 		Scanner scn = new Scanner(System.in);
-
-		display: while (true) {
+		
+		try {
+		mainLoop: while (true) {
 			greet();
 			num = scn.nextInt();
 
@@ -19,22 +21,28 @@ public class MainClass extends ATM_methods {
 				System.out.println("Please enter the amount to be withdrawn: ");
 				withdraw = scn.nextInt();
 				withdraw(balance,withdraw);
+				Thread.sleep(sleep);
 				break;
 			case 2:
 				System.out.println("Please enter the amount to be Deposited: ");
 				deposit = scn.nextInt();
 				deposit(balance,deposit);
+				Thread.sleep(sleep);
 				break;
 			case 3:
 				System.out.println("\n Your Current Balance is: " + balance);
 				System.out.println();
+				Thread.sleep(sleep);
 				break;
 			case 4:
 				System.out.println("\nThanks for Visiting ATM \n");
-				break display;
+				break mainLoop;
 			default:
 				break;
 			}
+		}
+		} catch (Exception e) {
+			System.out.println("Invalid Request");
 		}
 
 	}
