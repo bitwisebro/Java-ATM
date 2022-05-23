@@ -29,8 +29,7 @@ public class MainClass extends ATM_methods {
 					Thread.sleep(sleep);
 					break;
 				case 3:
-					System.out.println("\n Your Current Balance is: " + balance);
-					System.out.println();
+					showBalance(balance, scn);
 					Thread.sleep(sleep);
 					break;
 				case 4:

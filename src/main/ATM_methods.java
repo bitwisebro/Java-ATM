@@ -46,4 +46,14 @@ public class ATM_methods {
 			System.out.println("Entered PIN is Incorrect! Please try Again!! \n");
 		}
 	}
+	public static void showBalance(int balance, Scanner scn) {
+		System.out.println("Enter Your PIN: ");
+		int enteredPIN = scn.nextInt();
+		if (enteredPIN == pin) {
+			System.out.println("Your current account Balance is: " + balance);
+			System.out.println("");
+		} else {
+			System.out.println("Entered PIN is Incorrect! Please try Again!! \n");
+		}
+	}
 }
