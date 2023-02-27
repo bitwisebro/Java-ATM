@@ -3,7 +3,7 @@ package main;
 import java.util.*;
 
 public class MainClass extends ATM_methods {
-//	private static int pin = 0000;
+//	private static int pin = 1234;
 
 	public static void main(String[] args) throws Exception {
 		int balance = 50000, withdraw, deposit, num;
